@@ -29,6 +29,11 @@ const onInputForm = () => {
 
 const onSubmitForm = event =>{
     event.preventDefault();
+
+    if(!email.value || !message.value) {
+        alert(`Заповніть, будь ласка, всі поля`);
+        return
+    }
     try {
     const savedFormDate = JSON.parse(localStorage.getItem(KEY));//тут отримуємо дані за ключем, і виводитиме збережені дані у вигляді обєкта
     localStorage.removeItem(KEY);
